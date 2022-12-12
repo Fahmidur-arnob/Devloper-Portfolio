@@ -1,3 +1,5 @@
+
+
 AOS.init();
 // You can also pass an optional settings object
 // below listed default settings
@@ -13,3 +15,14 @@ AOS.init({
   anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 
 });
+
+function sendEmail (e){
+  e.preventDefault();
+
+  emailjs.sendForm('service_1jnhqzb', 'template_33tj05s', e.target, 'YOUR_USER_ID')
+  .then(res => {
+    console.log(res)
+  }, (error) => {
+    console.log(error.text);
+  });
+}
